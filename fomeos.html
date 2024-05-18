@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+
+<title>狐狸工坊 | FomeOS</title>
+<link rel="icon" href="image/logo.png"/>
+<head>
+<script src="js/cursor.js"></script>
+<p>狐狸工坊 | FomeOS
+    <button id="fullScreen" onclick="fullscreen();">点击全屏</button>
+    <button id="exitFullScreen" onclick="exitFullscreen();">退出全屏</button>
+<a href="index.html">回去</a>
+<script>
+    function fullscreen() {
+        var el = document.documentElement; /* 获取(<html>)元素以全屏显示页面 */
+        var rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullScreen;//定义不同浏览器的全屏API
+        //执行全屏
+        if (typeof rfs != "undefined" && rfs) {
+            rfs.call(el);
+        } else if (typeof window.ActiveXObject != "undefined") {
+            var wscript = new ActiveXObject("WScript.Shell");
+            if (wscript != null) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+    }
+ 
+    //退出全屏
+    function exitFullscreen() {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    }
+ 
+//ESC可以退出全屏
+
+</script>
+<iframe src="foxbells.github.io" width="100%" height="700" frameborder="1"></iframe>
+</html>
