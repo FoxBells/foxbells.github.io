@@ -50,5 +50,21 @@ a {text-decoration:none;}
 <br>
 <br>
 <a class="button" align="center" href="home.html">在这里！</a>
+          <button id="full-screen-btn">进入全屏</button>
+    </div>
+  </body>
+  <script>
+    const html = document.querySelector('html');
+    const fullScreenBtn = document.getElementById('full-screen-btn');
+    fullScreenBtn.onclick = () => {
+      html.requestFullscreen()
+        .then(() => {
+          console.log('进入全屏成功')；
+        })
+        .catch(() => {
+          console.log('进入全屏失败')；
+        })
+    }
+  </script>
 </div>
 </html>
