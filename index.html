@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-.loader {
-  display: flex;
-  justify-content: center;
-}
+	<meta charset="UTF-8">
+	<style>
+		.animbox {
+		    margin: 50px auto;
+		    width: 200px;
+		    text-align: center;
+		}
+		/*设置各竖条的共有样式*/
+		.animbox > div {
+		    background-color: #279fcf;
+		    width: 15px;
+		    height: 125px;
+		    border-radius: 2px;
+		    margin: 5px;
+		    animation-fill-mode: both;
+		    display: inline-block;
+		    animation: anim 0.9s 0s infinite cubic-bezier(.11, .49, .38, .78);
+		}
+		/*设置动画延迟*/
+		.animbox > :nth-child(2), .animbox > :nth-child(4) {
+		    animation-delay: 0.25s !important;
+		}
 
-.line {
-  width: 20px;
-  height: 50px;
-  background-color: #3498db;
-  margin: 0 5px;
-  animation: grow 1s infinite;
-}
-
-@keyframes grow {
-  0%, 100% {
-    height: 50px;
-  }
-  50% {
-    height: 20px;
-  }
-}
-</style>
+		.animbox > :nth-child(1), .animbox > :nth-child(5) {
+		    animation-delay: 0.5s !important;
+		}
+		/*定义动画*/
+		@keyframes anim {
+		    0% {  transform: scaley(1); }
+		    80% {  transform: scaley(0.3); }
+		    90% {  transform: scaley(1);   }
+		}
+	</style>
     <meta http-equiv="refresh" content="3;url=html/home.html">
 </head>
 <body>
-<div class="loader">
-  <div class="line"></div>
-  <div class="line"></div>
-  <div class="line"></div>
-</div>
+	<div class="animbox">
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	    <div></div>
+	</div>
 </body>
 </html>
