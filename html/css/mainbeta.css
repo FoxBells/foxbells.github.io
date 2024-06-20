@@ -73,12 +73,13 @@ Justify-content: flex-end
 .flex-container .box {
   border-radius: 25px;
   background-color: rgba(150,150,150,0.5);
-  width: 50%;
+  width: 55%;
   margin: 10px;
   text-align: center;
   line-height: 30px;
   font-size: 20px;
 }
+
 #mySidenav a {
   position: absolute;
   left: -80px;
@@ -88,7 +89,6 @@ Justify-content: flex-end
   text-decoration: none;
   font-size: 20px;
   color: white;
-  border-radius: 0 20px 20px 0;
          position: fixed;
 
 }
@@ -99,7 +99,7 @@ Justify-content: flex-end
 }
 
 #bg0 {
-  top: 75px;
+  top: 94px;
   background-color: rgba(5,5,5,0.5);
 }
 #bg1 {
@@ -107,6 +107,7 @@ Justify-content: flex-end
   background-color: rgba(5,5,5,0.5);
 }
 #bg2 {
-  top: 225px;
+  top: 206px;
   background-color: rgba(5,5,5,0.5);
+  border-radius: 0 0 20px 0;
 }
