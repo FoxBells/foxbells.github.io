@@ -22,7 +22,7 @@ body {
   
 }
 
-.header input {
+.header a {
   float: left;
   color: white;
   text-align: center;
@@ -31,11 +31,10 @@ body {
   font-size: 18px; 
   line-height: 25px;
   border-radius: 10px;
-  outline: none; 
-border: 0; 
+
 }
 
-.header input.logo {
+.header a.logo {
   font-size: 20px;
   font-weight: bold;
 }
@@ -70,7 +69,7 @@ Justify-content: flex-end
   font-size: 20px;
 }
 
-#mySidenav input {
+#mySidenav a {
   position: absolute;
   left: -80px;
   transition: 0.3s;
@@ -85,7 +84,7 @@ outline: none;
 border: 0; 
 }
 
-#mySidenav input:hover {
+#mySidenav a:hover {
   left: 0;
 
 }
