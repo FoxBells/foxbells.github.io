@@ -22,7 +22,7 @@ body {
   
 }
 
-.header {
+.header input {
   float: left;
   color: white;
   text-align: center;
@@ -31,13 +31,13 @@ body {
   font-size: 18px; 
   line-height: 25px;
   border-radius: 10px;
-}
-
-.header logo {
-  font-size: 20px;
-  font-weight: bold;
   outline: none; 
 border: 0; 
+}
+
+.header input.logo {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .header a:hover {
