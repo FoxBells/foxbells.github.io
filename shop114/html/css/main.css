@@ -22,7 +22,7 @@ body {
   
 }
 
-.header a {
+.header {
   float: left;
   color: white;
   text-align: center;
@@ -33,9 +33,11 @@ body {
   border-radius: 10px;
 }
 
-.header a.logo {
+.header logo {
   font-size: 20px;
   font-weight: bold;
+  outline: none; 
+border: 0; 
 }
 
 .header a:hover {
@@ -50,18 +52,6 @@ body {
 
 .header-right {
   float: right;
-}
-
-@media screen and (max-width: 500px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .header-right {
-    float: none;
-  }
 }
 
 .flex-container {
