@@ -68,34 +68,43 @@ Justify-content: flex-end
   line-height: 30px;
   font-size: 20px;
 }
-
-#mySidenav a {
-  position: absolute;
-  left: -80px;
-  transition: 0.3s;
-  padding: 15px;
-  width: 110px;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
-         position: fixed;
-  background-color: rgba(5,5,5,0.5);
-outline: none; 
-border: 0; 
-}
-
-#mySidenav a:hover {
+.overlay {
+  height: 0%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
   left: 0;
-
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.8);
+  overflow-y: hidden;
+  transition: 0.5s;
 }
 
-#bg0 {
-  top: 94px;
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
 }
-#bg1 {
-  top: 150px;
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
 }
-#bg2 {
-  top: 206px;
-  border-radius: 0 0 20px 0;
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
 }

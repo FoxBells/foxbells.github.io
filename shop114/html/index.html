@@ -11,8 +11,15 @@
 <script src="js/index.js"></script>
 <link rel="stylesheet" href="css/main.css">
 <script>
+function openNav() {
+  document.getElementById("myNav").style.height = "100%";
+}
 
+function closeNav() {
+  document.getElementById("myNav").style.height = "0%";
+}
 </script>
+
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
@@ -23,13 +30,19 @@
 <div class="header">
 <a href="#" class="logo" type=button onclick="iframe.location='home.html'">狐狸工坊1.1.6内测版</a><br>
   <div class="header-right">
+<a href="#" onclick="openNav()">菜单：我在这！</a><br>
 <a href="#">©2020-2024 Fox Community. All rights reserved.</a>
   </div>
 </div>
-<div id="mySidenav" class="sidenav">
-<a href="#" id="bg0" onclick="iframe.location='wiki.html'"/>百科</a>
-<a href="#" id="bg1" onclick="iframe.location='shop.html'"/>工坊</a>
-<a href="#" id="bg2" onclick="iframe.location='music.html'"/>音乐</a>
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+  <div onclick="closeNav()">
+    <a href="#" onclick="iframe.location='wiki.html'">百科</a>
+    <a href="#" onclick="iframe.location='shop.html'">工坊</a>
+    <a href="#" onclick="iframe.location='music.html'">音乐</a>
+  </div>
+</div>
 </div>
 <html style="height: 100%;">
   <body style="height: 100%;">
@@ -38,4 +51,5 @@
     </div>
   </body>
 </html>
+
 </html>
