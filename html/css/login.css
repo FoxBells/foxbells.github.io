@@ -1,0 +1,120 @@
+body {  text-align: center; font-family: Arial, Helvetica, sans-serif;}
+
+/* 全宽输入框 */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* 为所有按钮设置样式 */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* 取消按钮的额外样式 */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* 居中图像并定位关闭按钮 */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* 模态（背景）*/
+.modal {
+  display: none; /* 默认隐藏 */
+  position: fixed; /* 留在原地 */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* 全屏宽度 */
+  height: 100%; /* 全高 */
+  overflow: auto; /* 如果需要启用滚动 */
+  background-color: rgb(0,0,0); /* 后备颜色 */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* 模态内容/框 */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 距顶部 5%，距底部 15% 并居中 */
+  border: 1px solid #888;
+  width: 80%; /* 可以多也可以少，取决于屏幕尺寸 */
+}
+
+/* 关闭按钮 (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* 添加缩放动画 */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* 在超小屏幕上改变 span 和 cancel 按钮的样式 */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
