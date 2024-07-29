@@ -48,6 +48,7 @@ body {
 .header a.active {
   background-color: #fff;
   color: white;
+
 }
 
 .header-right {
@@ -55,7 +56,7 @@ body {
 }
 
 .flex-container {
-  padding-top: 60px;
+
   display: flex;
   flex-wrap: nowrap;
 Justify-content: flex-end
