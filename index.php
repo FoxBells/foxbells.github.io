@@ -26,8 +26,7 @@ session_start();
 </div>
 <div id="mySidenav" class="sidenav">
   <div onclick="closeNav()">
-<a href="#">狐狸社区</a>
-<a href="#" onclick="iframe.location='home.html'">首页</a>
+<a href="#" onclick="iframe.location='home.html'">狐狸社区</a>
     <a href="#" onclick="iframe.location='shop.html'">下载</a>
     <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">登录</a>
 </div>
@@ -66,7 +65,7 @@ session_start();
     </div>
 <script>
 function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("mySidenav").style.width = "150px";
 }
 
 function closeNav() {
@@ -134,9 +133,7 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
 </script>
-
   </body>
 </html>
 </html>
