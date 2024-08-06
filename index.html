@@ -13,23 +13,22 @@ session_start();
 <link rel="stylesheet" href="css/bg.css">
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/login.css">
+
 </head>        
 
-<div class="header">
+<div class="topnav">
 
 <a href="#" id="hid"></a>
-<a href="#" ><?php echo  $_SESSION['username']; ?><a>
-  <div class="header-right">
-
-<a href="#" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776</a>
-  </div>
-</div>
-<div id="mySidenav" class="sidenav">
-  <div onclick="closeNav()">
-<a href="#">狐狸社区</a>
+  <div id="myLinks">
 <a href="#" onclick="iframe.location='home.html'">首页</a>
     <a href="#" onclick="iframe.location='shop.html'">下载</a>
+    <a href="#" onclick="iframe.location='box.html'">盒子</a>
     <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">登录</a>
+  </div>
+  <a href="javascript:void(0);" onclick="myFunction()">
+<菜单>
+  </a>
+  </div>
 </div>
 </div>
         <style type="text/css">
@@ -64,15 +63,6 @@ session_start();
 <iframe name="iframe" src="home.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
        <div id="c">©2020-2024 狐狸社区。所有版权。</div>
     </div>
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-</script>
 <script type="text/javascript">
     //创建一个日期对象
     var dd= new Date();
@@ -136,7 +126,16 @@ window.onclick = function(event) {
 }
 
 </script>
-
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
   </body>
 </html>
 </html>
