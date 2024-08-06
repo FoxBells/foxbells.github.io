@@ -6,18 +6,22 @@ color:white
 
 .chip {
   display: inline-block;
-  padding: 0 25px;
-  height: 55px;
+  height: 75px;
+  width: 100%;
   font-size: 18px;
-  line-height: 55px;
-  border-radius: 25px;
-  background-color: rgba(5,5,5,0.5);
+  line-height: 25px;
+  background-color: rgba(5,5,5,0.0);
+  border-radius: 20px;
 }
 
 .chip img {
   float: left;
-  margin: 0 10px 0 -25px;
-  height: 55px;
-  width: 55px;
-  border-radius: 50%;
+  margin: 0 10px 0 0px;
+  height: 75px;
+  width: 75px;
+  border-radius: 20px;
+}
+hr {
+border:0px;
+border-bottom: 3px solid white;
 }
