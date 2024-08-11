@@ -4,7 +4,7 @@ text-decoration: none;
 color:white
 }
 
-.chip {
+.boxs {
   display: inline-block;
   height: 75px;
   width: 100%;
@@ -14,7 +14,7 @@ color:white
   border-radius: 25px;
 }
 
-.chip img {
+.boxs img {
   float: left;
   margin: 0 10px 0 0px;
   height: 75px;
