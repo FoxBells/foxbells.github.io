@@ -1,0 +1,22 @@
+.gameab {
+  padding: 0 30px;
+  font-size: 16px;
+  line-height: 25px;
+  background-color: #fff;
+border: solid #fff 20px;
+position: fixed;
+}
+.gameab {
+	animation:gamedh 3.5s 1 ;
+animation-iteration-count: 1;
+animation-fill-mode: forwards;
+}
+
+@keyframes gamedh{
+	0%{translate: -200%;}
+	10%{translate: -200%;}
+	40%{translate: -0%;}
+        70%{translate: -0%;}
+        100%{translate: -200%;}
+	
+}
