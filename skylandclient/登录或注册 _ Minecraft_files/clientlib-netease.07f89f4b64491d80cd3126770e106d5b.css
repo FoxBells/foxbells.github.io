@@ -1,0 +1,12 @@
+.netease-promotion-popup .show {
+    display: block !important;
+}
+
+.netease-promotion-popup .modal-backdrop {
+    display: none;
+}
+
+.netease-promotion-popup .modal.show+.modal-backdrop {
+    display: block;
+    opacity: .5;
+}
