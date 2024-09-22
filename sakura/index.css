@@ -1,14 +1,12 @@
 
+ *{
+cursor: url('Arrow.cur'), auto;         
+        }
+
 body { 
 overflow: hidden;
 margin: 0;
 font-family: Arial, Helvetica, sans-serif;
-cursor: pointer;
-cursor: auto;
-cursor: inherit;
-cursor: initial;
-cursor: unset;
-cursor: url(Arrow.cur), pointer;
 background-color: #808080;
 }
 a{

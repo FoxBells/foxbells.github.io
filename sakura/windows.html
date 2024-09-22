@@ -1,107 +1,280 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name=”viewport” content=”width=device-width, initial-scale=1″ />
-<title>Sakura Community</title>
 <link rel="stylesheet" href="index.css">
 <link rel="stylesheet" href="bg.css">
 <script src="cursor.js"></script></head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<div class="topnav">
-<p>Sakura Community</p>
-  <div class="topnav-right">
-  <a class="a2">&#8211</a>
-  <a id="fullscreen" onclick="toggleFullscreen()" class="a2">&#9744</a>
-  <a href="exit.html" class="a1">&#10005</a>
-  </div>
-</div>
-<div class="navbar">
-  <a>SakuraOS</a>
-  <div class="navbar-right">
-  <a id="time"></a>
-  </div>
-</div>
-<div style="padding-top"><div align="center";><font color=#fff>
- <div class="flex-container">
-  <div class="box">
-  <h2 href="#" id="hid"></h2>
-  <h2>欢迎来到樱花树社区</h2>这个社区是狐狸社区的分支！<br><br>
-  </div>
- </div>
- <div class="flex-container">
- <div class="box">
- 111
- </div>
-</div>
-<div class="flex-container">
- <div class="box">
-<h1>广告</h1>
-  </div>
-  <div class="box">
-<h1>广告</h1>
- </div>
-</div>
-<div class="flex-container">
- <div class="box"><br>
-©2020-2024 狐狸社区。所有版权。<br><br>
- </div>
-</div>
-<script type="text/javascript">
-    //创建一个日期对象
-    var dd= new Date();
-    var st =document.getElementById("hid");
-    var hour =dd.getHours();//获取当前时
-    //alert(hour);
-    if(hour>0 && hour<=6){
-        st.innerHTML="凌晨好";
-    }else if(hour>6 && hour<=9){
-        st.innerHTML="上午好";
-    }else if(hour>9 && hour<=12){
-        st.innerHTML="早上好";
-    }else if(hour>12 && hour<=15){
-        st.innerHTML="中午好";
-    }else if(hour>15 && hour<=18){
-        st.innerHTML="下午好";
-    }else if(hour>18 && hour<=21){
-        st.innerHTML="傍晚好";
-    }else if(hour>21 && hour<=24){
-        st.innerHTML="晚上好";
-    }
-    </script>
-  <script>
-    function toggleFullscreen() {
-      var fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SakuraOS</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #taskbar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: right;
+z-index: 1;
+        }
+        #start-button {
+        }
 
-      if (!fullscreenElement) {
-        var element = document.documentElement;
-        if (element.requestFullscreen) {
-          element.requestFullscreen();
-        } else if (element.webkitRequestFullscreen) {
-          element.webkitRequestFullscreen();
+        #start-menu {
+            display: none;
+            position: absolute;
+            bottom:35px;
+            background-color: #333;
+            z-index: 1000;
+            box-shadow: 0px 0px 12px #555555;
         }
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
+        #start-menu a {
+            display: block;
+            padding: 8px;
+            color: #fff;
+            text-decoration: none;
         }
-      }
+        #start-menu a:hover {
+              background: #555;
+  color: #fff;
+        }
+        .topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav p {
+  float: left;
+  color: #fff;
+  padding: 0px 15px;
+  text-decoration: none;
+  font-size: 15px;
+}
+        .a2 {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 15px;
+}
+        .a2:hover {
+  background: #555;
+  color: #fff;
+        }
+  .topnav-right {
+  float: right;
+
+}
+.a1 {
+  float: left;
+  color: #fff;
+  text-align: center;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.a1:hover {
+  background-color: red;
+  color: #fff;
+}
+        .window {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+z-index: 2;
+        }
+        .window-header {
+            background-color: #333;
+            padding: 8px 10px;
+z-index: 2;
+
+        }
+        .window-title {
+            color: #fff;
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+z-index: 2;
+        }
+        .window-controls {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+z-index: 2;
+        }
+        .window-control {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-left: 5px;
+            border-radius: 50%;
+z-index: 2;
+        }
+        .window-close {
+            background-color: #ff6060;
+z-index: 2;
+        }
+        .window-minimize {
+            background-color: #ffdf60;
+z-index: 2;
+        }
+        .window-maximize {
+            background-color: #60ff60;
+z-index: 2;
+        }
+        .window-body {
+            padding: 0px;
+z-index: 2;
+        }
+        iframe {
+    display: block;
+    border: none;
+    height: 90vh;/*设置高度百分比,一直调到只有一个滚动调为止*/
+    width: 100%;
+}}
+    </style>
+</head>
+<body>
+    <div id="taskbar" class="topnav">
+        <a id="start-button" class="a2">SakuraOS</a>
+        <div class="topnav-right">
+        <a id="currentDateTime" class="a2">加载中...</a> 
+        </div>
+    </div>
+    <div id="start-menu">
+        <a onclick="openWindow()">Sakura Community</a>
+        <a href="exit.html#">重启</a>
+        <a href="exit.html#">关机</a>
+        <!-- 更多的菜单项 -->
+    </div>
+    <div class="window" id="window1">
+    <div class="window-header" id="windowHeader">
+        <span class="window-title">Sakura Community</span>
+        <div class="window-controls">
+            <div class="a2" onclick="closeWindow()">&#8211</div>
+            <div class="a2" onclick="toggleMaximize()">&#9744</div>
+            <div class="a1" onclick="closeWindow()">&#10005</div>
+        </div>
+    </div>
+    <div class="window-body">
+<iframe src="windows2.html" width="100%" allowfullscreen frameborder="0"></iframe>
+
+    </div>
+</div>
+    <script>
+        document.getElementById('start-button').addEventListener('click', function() {
+            var startMenu = document.getElementById('start-menu');
+            startMenu.style.display = startMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // 点击其他地方隐藏开始菜单
+        window.onclick = function(event) {
+            if (!event.target.matches('#start-button')) {
+                var startMenu = document.getElementById('start-menu');
+                if (startMenu.style.display === 'block') {
+                    startMenu.style.display = 'none';
+                }
+            }
+        }
+    </script>
+    
+    <script>  
+        function showCurrentDateTime() {  
+            const now = new Date();  
+            const year = now.getFullYear();  
+            const month = String(now.getMonth() + 1).padStart(2, '0'); // 月份是从0开始的，所以要+1  
+            const day = String(now.getDate()).padStart(2, '0');  
+            const hours = String(now.getHours()).padStart(2, '0');  
+            const minutes = String(now.getMinutes()).padStart(2, '0');  
+            const seconds = String(now.getSeconds()).padStart(2, '0');  
+            const formattedDateTime = `${hours}:${minutes}:${seconds}`;  
+            document.getElementById('currentDateTime').textContent = formattedDateTime;  
+        }  
+  
+        // 初始显示当前日期和时间  
+        showCurrentDateTime();  
+  
+        // 每秒更新一次日期和时间  
+        setInterval(showCurrentDateTime, 1000);  
+    </script> 
+    <script>
+    var window1 = document.getElementById('window1');
+    var header = document.getElementById('windowHeader');
+    var isMaximized = false;
+
+    var drag = {
+        startX: 0,
+        startY: 0,
+        offsetX: 0,
+        offsetY: 0,
+        dragging: false
+    };
+
+    header.addEventListener('mousedown', function(e) {
+        drag.startX = e.clientX - drag.offsetX;
+        drag.startY = e.clientY - drag.offsetY;
+        drag.dragging = true;
+        document.addEventListener('mousemove', mouseMove);
+        document.addEventListener('mouseup', mouseUp);
+    });
+
+    function mouseMove(e) {
+        if (drag.dragging) {
+            drag.offsetX = e.clientX - drag.startX;
+            drag.offsetY = e.clientY - drag.startY;
+            window1.style.left = drag.offsetX + 'px';
+            window1.style.top = drag.offsetY + 'px';
+        }
     }
-  </script>
-<script>
-    var i=0;
-    function myDate(){
-        var now=new Date();
-        var year=now.getFullYear();
-        var month=now.getMonth()+1;
-        var day=now.getDate();
-        var hours=now.getHours();
-        var minutes=now.getMinutes();
-        var seconds=now.getSeconds();
- 
-        document.getElementById("time").innerHTML=hours+":"+minutes+":"+seconds;
+
+    function mouseUp() {
+        drag.dragging = false;
+        document.removeEventListener('mousemove', mouseMove);
+        document.removeEventListener('mouseup', mouseUp);
     }
-    setInterval(myDate,1000);
+
+    function minimizeWindow() {
+        // 这里可以添加最小化窗口的逻辑
+        alert('窗口最小化');
+    }
+
+    function toggleMaximize() {
+        if (!isMaximized) {
+            window1.style.width = '100vw';
+            window1.style.height = '100vh';
+            window1.style.top = '0';
+            window1.style.left = '0';
+            isMaximized = true;
+        } else {
+            window1.style.width = '50%';
+            window1.style.height = '50%';
+            window1.style.top = '0px';
+            window1.style.left = '0px';
+            isMaximized = false;
+        }
+    }
+
+    function closeWindow() {
+        window1.style.display = 'none';
+    }
+
+    function openWindow() {
+        window1.style.display = 'block';
+    }
+
+    // 确保页面加载时窗口是关闭的
+    window1.style.display = 'none';
 </script>
+<video src="https://fastcdn.mihoyo.com/static-resource-v2/2024/09/11/e595144fd7564039997e350ea1fed698_8083922001771693941.mp4" style="width: 100%;height: 100%;object-fit: cover;position: absolute;top: 0;left: 0;" autoplay="autoplay" loop="loop" </video>
+</body>
 </html>

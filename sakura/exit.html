@@ -3,17 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name=”viewport” content=”width=device-width, initial-scale=1″ />
-<title>Sakura Community</title>
+<title>SakuraOS</title>
 <style>
-
+ *{
+cursor: url('Arrow.cur'), auto;         
+        }
 body { 
 background-color:#000;
-cursor: pointer;
-cursor: auto;
-cursor: inherit;
-cursor: initial;
-cursor: unset;
-cursor: url(Arrow.cur), pointer;
 }
 @keyframes fadeinout {
   0% {width: 0%;}
@@ -23,7 +19,9 @@ cursor: url(Arrow.cur), pointer;
   100% {width: 100%;}
 }
 .dh {
-  animation: fadeinout 3s infinite;
+  animation-name: fadeinout;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
 }
 
 .box {
