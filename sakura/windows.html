@@ -12,44 +12,50 @@
             margin: 0;
             padding: 0;
             height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: sans-serif;
         }
         #taskbar {
             position: fixed;
             bottom: 0;
             width: 100%;
             text-align: right;
-z-index: 1;
+z-index: 3;
         }
         #start-button {
+            z-index: 3;
         }
 
         #start-menu {
+            width: 250px;
             display: none;
             position: absolute;
-            bottom:35px;
-            background-color: #333;
-            z-index: 1000;
+            bottom:40px;
+            background-color: rgba(255, 255, 255, 0.75);
+            z-index: 2;
             box-shadow: 0px 0px 12px #555555;
+                border-radius: 12.5px;
         }
         #start-menu a {
             display: block;
             padding: 8px;
-            color: #fff;
+            color: #000;
             text-decoration: none;
+                border-radius: 12.5px;
+                z-index: 2;
         }
         #start-menu a:hover {
-              background: #555;
-  color: #fff;
+              background: #fff;
+              z-index: 2;
+  color: #000;
         }
         .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: rgba(222, 222, 222, 0.75);
 }
 
 .topnav p {
   float: left;
-  color: #fff;
+  color: #000;
   padding: 0px 15px;
   text-decoration: none;
   font-size: 15px;
@@ -57,15 +63,15 @@ z-index: 1;
         .a2 {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #000;
   text-align: center;
   padding: 8px 12px;
   text-decoration: none;
   font-size: 15px;
 }
         .a2:hover {
-  background: #555;
-  color: #fff;
+  background: rgba(235, 235, 235, 1);
+  color: #000;
         }
   .topnav-right {
   float: right;
@@ -73,7 +79,7 @@ z-index: 1;
 }
 .a1 {
   float: left;
-  color: #fff;
+  color: #000;
   text-align: center;
   padding: 8px 12px;
   text-decoration: none;
@@ -82,35 +88,36 @@ z-index: 1;
 
 .a1:hover {
   background-color: red;
-  color: #fff;
+  color: #000;
 }
         .window {
             position: absolute;
-            width: 50%;
-            height: 50%;
-            background-color: #fff;
+            width: 75%;
+            height: 75%;
+            background-color: #000;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             overflow: hidden;
-z-index: 2;
+            border-radius: 12.5px;
+z-index: 1;
         }
         .window-header {
-            background-color: #333;
+            background-color: #fff;
             padding: 8px 10px;
-z-index: 2;
+z-index: 1;
 
         }
         .window-title {
-            color: #fff;
+            color: #000;
             margin: 0;
             font-size: 14px;
             font-weight: bold;
-z-index: 2;
+z-index: 1;
         }
         .window-controls {
             position: absolute;
             top: 0px;
             right: 0px;
-z-index: 2;
+z-index: 1;
         }
         .window-control {
             display: inline-block;
@@ -118,41 +125,59 @@ z-index: 2;
             height: 10px;
             margin-left: 5px;
             border-radius: 50%;
-z-index: 2;
-        }
-        .window-close {
-            background-color: #ff6060;
-z-index: 2;
-        }
-        .window-minimize {
-            background-color: #ffdf60;
-z-index: 2;
-        }
-        .window-maximize {
-            background-color: #60ff60;
-z-index: 2;
         }
         .window-body {
             padding: 0px;
-z-index: 2;
+z-index: 1;
         }
         iframe {
     display: block;
     border: none;
-    height: 90vh;/*设置高度百分比,一直调到只有一个滚动调为止*/
+    height: 100vh;/*设置高度百分比,一直调到只有一个滚动调为止*/
     width: 100%;
+}
+        .a3 {
+  float: left;
+  display: block;
+  color: #000;
+  text-align: center;
+  padding: 8px 12px;
+  text-decoration: none;
+  font-size: 15px;
+    border-radius: 12.5px;
+}
+        .a3:hover {
+  background: #fff;
+  color: #000;
+        }
+  .topnav-right {
+  float: right;
+
+}
+  .topnav-center {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }}
     </style>
 </head>
 <body>
     <div id="taskbar" class="topnav">
-        <a id="start-button" class="a2">SakuraOS</a>
+        <a id="start-button" class="a3">SakuraOS</a>
+        <div class="topnav-center">
+        <a onclick="openWindow()" class="a3" style="background: rgba(255, 255, 255, 0.75);"><u>Sakura Community</u></a>
+        </div>
         <div class="topnav-right">
-        <a id="currentDateTime" class="a2">加载中...</a> 
+        <a id="toggleButton" class="a3">中</a>
+        <a id="currentDateTime" class="a3">加载中...</a> 
         </div>
     </div>
     <div id="start-menu">
         <a onclick="openWindow()">Sakura Community</a>
+        <br><br><br><br><br>
         <a href="exit.html#">重启</a>
         <a href="exit.html#">关机</a>
         <!-- 更多的菜单项 -->
@@ -256,8 +281,8 @@ z-index: 2;
             window1.style.left = '0';
             isMaximized = true;
         } else {
-            window1.style.width = '50%';
-            window1.style.height = '50%';
+            window1.style.width = '75%';
+            window1.style.height = '75%';
             window1.style.top = '0px';
             window1.style.left = '0px';
             isMaximized = false;
@@ -274,6 +299,27 @@ z-index: 2;
 
     // 确保页面加载时窗口是关闭的
     window1.style.display = 'none';
+</script>
+<script>
+// 获取按钮元素
+var button = document.getElementById('toggleButton');
+
+// 定义两个状态的文字
+var text1 = '英';
+var text2 = '中';
+
+// 切换按钮文字的函数
+function toggleButtonText() {
+  // 检查当前按钮的文字，然后切换
+  if (button.textContent === text1) {
+    button.textContent = text2;
+  } else {
+    button.textContent = text1;
+  }
+}
+
+// 为按钮添加点击事件监听器
+button.addEventListener('click', toggleButtonText);
 </script>
 <video src="https://fastcdn.mihoyo.com/static-resource-v2/2024/09/11/e595144fd7564039997e350ea1fed698_8083922001771693941.mp4" style="width: 100%;height: 100%;object-fit: cover;position: absolute;top: 0;left: 0;" autoplay="autoplay" loop="loop" </video>
 </body>
