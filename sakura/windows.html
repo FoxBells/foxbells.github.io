@@ -168,7 +168,6 @@ z-index: 1;
     <div id="taskbar" class="topnav">
         <a id="start-button" class="a3">SakuraOS</a>
         <div class="topnav-center">
-        <a onclick="openWindow()" class="a3" style="background: rgba(255, 255, 255, 0.75);"><u>Sakura Community</u></a>
         </div>
         <div class="topnav-right">
         <a id="toggleButton" class="a3">中</a>
@@ -176,9 +175,13 @@ z-index: 1;
         </div>
     </div>
     <div id="start-menu">
-        <a onclick="openWindow()">Sakura Community</a>
-        <br><br><br><br><br>
-        <a href="exit.html#">重启</a>
+        <a onclick="openWindow();iframe.location='windows2.html';">Sakura Community</a>
+        <a onclick="openWindow();iframe.location='https://foxbells.github.io/';">FoxComm</a>
+        <a onclick="openWindow();iframe.location='https://foxbells.github.io/shop114/';">FoxShop1.7.5</a>
+        <a onclick="openWindow();iframe.location='https://mihoyo.com/';">米哈游启动器</a>
+        <a onclick="openWindow();iframe.location='EaglercraftX_1.8_u35_Offline_Signed.html';">Minecraft: Java Edition 1.8.9</a>
+        <br><br><br>
+        <a href="exit2.html#">重启</a>
         <a href="exit.html#">关机</a>
         <!-- 更多的菜单项 -->
     </div>
@@ -192,7 +195,7 @@ z-index: 1;
         </div>
     </div>
     <div class="window-body">
-<iframe src="windows2.html" width="100%" allowfullscreen frameborder="0"></iframe>
+<iframe name="iframe" src="windows2.html" width="100%" frameborder="0" scrolling="no"></iframe>
 
     </div>
 </div>
